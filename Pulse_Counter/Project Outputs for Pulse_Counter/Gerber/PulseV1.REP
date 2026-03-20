@@ -1,0 +1,418 @@
+*************************************************************
+FileName = PulseV1.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Component Center
+      File : PulseV1.GM16
+
+    Adding Layer      : Top Component Center
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Top Courtyard
+      File : PulseV1.GM15
+
+    Adding Layer      : Top Courtyard
+
+
+Used DCodes :
+    D10
+    D11
+    D78
+*************************************************************
+
+*************************************************************
+Generating : Top 3D Body
+      File : PulseV1.GM13
+
+    Adding Layer      : Top 3D Body
+
+
+Used DCodes :
+    D10
+    D11
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Top Designator
+      File : PulseV1.GM11
+
+    Adding Layer      : Top Designator
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Assembly
+      File : PulseV1.GM5
+
+    Adding Layer      : Top Assembly
+
+
+Used DCodes :
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Board
+      File : PulseV1.GM2
+
+    Adding Layer      : Board
+
+
+Used DCodes :
+    D60
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : PulseV1.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : PulseV1.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : PulseV1.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : PulseV1.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D55
+    D56
+    D57
+    D58
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : PulseV1.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D18
+    D20
+    D21
+    D22
+    D24
+    D27
+    D28
+    D32
+    D34
+    D36
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : PulseV1.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : PulseV1.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D45
+    D46
+    D64
+    D65
+    D66
+    D67
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : PulseV1.GPB
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D64
+    D65
+    D66
+    D67
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : PulseV1.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D59
+    D60
+    D61
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+*************************************************************
+
+*************************************************************
+Generating : Int2 (PWR)
+      File : PulseV1.GP2
+
+    Adding Layer      : Int2 (PWR)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D63
+    D70
+    D71
+    D72
+    D73
+    D75
+    D76
+    D77
+*************************************************************
+
+*************************************************************
+Generating : Int1 (GND)
+      File : PulseV1.GP1
+
+    Adding Layer      : Int1 (GND)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D70
+    D71
+    D72
+    D73
+    D74
+    D75
+    D76
+    D77
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : PulseV1.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D45
+    D46
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : PulseV1.GD1
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D13
+    D79
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : PulseV1.GG1
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Profile
+      File : PulseV1.GM
+
+
+Used DCodes :
+    D80
+*************************************************************
+

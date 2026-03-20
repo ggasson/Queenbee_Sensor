@@ -1,0 +1,61 @@
+Altium Designer Pick and Place Locations
+C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\Project Outputs for Pulse_Counter\Pick Place\Pick Place for PulseV1.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       18/02/26
+Time:       20:20
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+Designator Comment               Layer    Footprint                    Center-X(mil) Center-Y(mil) Rotation Description                                                                                                 
+U4         BMP388                TopLayer PQFN50P200X200X80-10N        3215.000      995.000       270      "P-Sensor SPI I2C 1, 25 Bar SMD"                                                                            
+C9         CC0603KRX7R9BB104     TopLayer FP-CC0603-DA-MFG             3190.000      845.000       270      "CAP CER 0.1UF 50V X7R 0603"                                                                                
+U5         LIS2DH12TR            TopLayer FP-LGA-12-8365767-MFG        2426.870      969.842       90       "ACCEL 2-16G I2C/SPI 12LGA"                                                                                 
+C12        CC0603KRX7R9BB104     TopLayer FP-CC0603-DA-MFG             2417.028      816.220       270      "CAP CER 0.1UF 50V X7R 0603"                                                                                
+C11        CC0603KRX7R9BB104     TopLayer FP-CC0603-DA-MFG             2185.472      470.000       180      "CAP CER 0.1UF 50V X7R 0603"                                                                                
+U1         ESP32-C3_SUPERMINI_TH TopLayer MODULE_ESP32-C3_SUPERMINI_TH 1380.000      600.000       0        "Super tiny ESP32-C3 board"                                                                                 
+J2         KF128-5.08-3P-AA      TopLayer KF1285083PAA                 3140.000      450.000       270      Connector                                                                                                   
+J1         WJ500V-5.08-2P        TopLayer WJ500V5082P                  220.000       750.000       90       Connector                                                                                                   
+U3         LMV331IDBVR           TopLayer FP-DBV0005A-MFG              2373.819      507.401       180      "IC GP LV COMPARATOR SOT-23-5"                                                                              
+U2         TPS54302DDCR          TopLayer FP-DDC0006A-MFG              707.716       587.717       270      "IC REG BUCK ADJ 3A TSOT23-6"                                                                               
+R21        "FRC0603J104 TS"      TopLayer RESC0603(1608)_N             2830.000      541.496       90       "100K 0.1W 1% 0603 (1608 Metric)  SMD"                                                                      
+R19        "FRC0603J102 TS"      TopLayer FP-TFCR0603-MFG              550.000       110.000       90       "RES Thin Film,  1kO, 1%, 0.1W, 25ppm/°C, 0603"                                                             
+R18        "FRC0603J102 TS"      TopLayer FP-TFCR0603-MFG              640.000       110.000       90       "RES Thin Film,  1kO, 1%, 0.1W, 25ppm/°C, 0603"                                                             
+R17        "FRC0603J102 TS"      TopLayer FP-TFCR0603-MFG              730.000       110.000       90       "RES Thin Film,  1kO, 1%, 0.1W, 25ppm/°C, 0603"                                                             
+R16        "FRC0603J102 TS"      TopLayer FP-TFCR0603-MFG              820.000       110.000       90       "RES Thin Film,  1kO, 1%, 0.1W, 25ppm/°C, 0603"                                                             
+R14        "FRC0603J472 TS"      TopLayer FP-MCT0603-IPC_C             2310.000      830.221       270      "RES SMD 100 OHM 1% 1/8W 0603"                                                                              
+R13        "FRC0603J472 TS"      TopLayer FP-MCT0603-IPC_C             2540.000      830.851       270      "RES SMD 100 OHM 1% 1/8W 0603"                                                                              
+R12        "FRC0603J302 TS"      TopLayer FP-ESR03-IPC_A               2050.000      787.441       270      "3kO ±5% 0.25W 0603 Anti-Surge Chip Resistor AEC-Q200"                                                      
+R11        0603WAF1103T5E        TopLayer RESC1608X55N                 2495.000      648.504       270      Resistor                                                                                                    
+R10        0603WAF1002T5E        TopLayer RESC1608X55N                 2255.000      573.504       90       Resistor                                                                                                    
+R9         0603WAF1503T5E        TopLayer RESC1608X55N                 2425.000      648.504       90       Resistor                                                                                                    
+R8         0603WAF2003T5E        TopLayer RESC1608X55N                 2517.008      252.362       90       Resistor                                                                                                    
+R7         CL0603JN1M5P          TopLayer RESC0603(1608)_N             2548.504      400.000       0        "1M5 0.1W 5% 0603 (1608 Metric)  SMD"                                                                       
+R6         0603WAF1002T5E        TopLayer RESC1608X55N                 2670.000      400.000       180      Resistor                                                                                                    
+R5         0402WGF1332TCE        TopLayer RESC1005X40N                 585.905       534.567       0        Resistor                                                                                                    
+R4         "FRC0603J104 TS"      TopLayer RESC0603(1608)_N             576.063       475.433       180      "100K 0.1W 1% 0603 (1608 Metric)  SMD"                                                                      
+R3         SCR0603F105K          TopLayer FP-CPF0603-MFG               787.716       440.000       90       "RES SMD 105KO 1% 1/16W 0603"                                                                               
+R2         RNCP0603FTD49R9       TopLayer FP-RNCP0603-IPC_C            572.065       820.000       0        "49.9O ±1% 0.125W 0603 High Power Anti-Sulfur Thin Film Chip Resistor"                                      
+R1         AC0603FR-07511KL      TopLayer FP-AC0603-MFG                707.716       441.969       270      "RES 511KO 1.00% 0.1W 0603"                                                                                 
+L1         IHLP2525CZER100M01    TopLayer VISH-IHLP2525C-01_V          762.953       852.716       90       "Low-Profile, High Current IHLP(R) Inductor, 10 uH, 5 MHz, -55 to 125 degC, 2-Pin SMD, RoHS, Tape and Reel" 
+IC3        LTR-308ALS-01         TopLayer LTR303ALS01                  2760.000      895.000       270      "Integrated Circuit"                                                                                        
+IC2        DS18B20+T&R           TopLayer DS18B20TR                    2050.000      930.000       0        "Integrated Circuit"                                                                                        
+IC1        AHT20                 TopLayer AHT20                        2995.000      965.000       0        "Integrated Circuit"                                                                                        
+D7         GL0603UR01            TopLayer FP-LSM0603453V-MFG           550.000       251.496       90       "LSM0603453V LED SM 0603 3V -/1000/-mcd Green"                                                              
+D6         GL0603UR01            TopLayer FP-LSM0603453V-MFG           640.000       251.496       90       "LSM0603453V LED SM 0603 3V -/1000/-mcd Green"                                                              
+D5         GL0603UR01            TopLayer FP-LSM0603453V-MFG           730.000       251.496       90       "LSM0603453V LED SM 0603 3V -/1000/-mcd Green"                                                              
+D4         GL0603UR01            TopLayer FP-LSM0603453V-MFG           820.000       251.496       90       "LSM0603453V LED SM 0603 3V -/1000/-mcd Green"                                                              
+D2         SMBJ33A               TopLayer FP-SMBJ-MFG                  2830.000      303.543       270      "TVS DIODE 33V 53.3V DO214AA"                                                                               
+D1         SS34-E3/9AT           TopLayer FP-SMC-MFG                   213.819       360.000       180      "DIODE SCHOTTKY 40V 3A DO214AB"                                                                             
+C10        CC0603KRX7R9BB104     TopLayer FP-CC0603-DA-MFG             2687.165      1014.213      90       "CAP CER 0.1UF 50V X7R 0603"                                                                                
+C8         CC0603KRX7R9BB104     TopLayer FP-CC0603-DA-MFG             2830.472      1015.000      0        "CAP CER 0.1UF 50V X7R 0603"                                                                                
+C7         CL10B222KB8NNNC       TopLayer FP-CL10-IPC_A                2638.504      251.299       270      "Cap Ceramic 2.2nF 50V X7R ±10% Pad SMD 0603 +125°C T/R"                                                    
+C6         0603C0G750J500NT      TopLayer FP-CC0603-0_1-0_9-MFG        576.063       407.520       0        "CC0603FRNPO9BN750 Multilayer Ceramic Capacitor, 75 pF, 50 V, ± 1%, C0G (NP0), 0603 [1608 Metric]"          
+C5         CC0603KRX7R9BB104     TopLayer FP-CC0603-DA-MFG             574.094       717.717       180      "CAP CER 0.1UF 50V X7R 0603"                                                                                
+C4         CL21A226MAQNNNE       TopLayer CAPC2013X140X45LL15T25       566.063       982.953       0        "Multi-layer Ceramic Capacitor, 22 uF, -55 to 85 degC, 2-Pin SMD (0805), RoHS, Tape and Reel"               
+C3         CL21A226MAQNNNE       TopLayer CAPC2013X140X45LL15T25       566.063       902.953       0        "Multi-layer Ceramic Capacitor, 22 uF, -55 to 85 degC, 2-Pin SMD (0805), RoHS, Tape and Reel"               
+C2         CL21A106KBYQNNE       TopLayer CAPC2012X145N                570.945       640.866       0        Capacitor                                                                                                   
+C1         CC0603KRX7R9BB104     TopLayer FP-CC0603-DA-MFG             820.197       564.095       90       "CAP CER 0.1UF 50V X7R 0603"                                                                                

@@ -1,0 +1,103 @@
+Protel Design System Design Rule Check
+PCB File : C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc
+Date     : 2026/02/18
+Time     : 20:18:17
+
+Processing Rule : Clearance Constraint (Gap=5mil) (All),(All)
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-1(2397.343mil,939.823mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-10(2397.343mil,999.862mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-11(2396.85mil,979.685mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-12(2396.85mil,960mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-2(2417.028mil,939.823mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-3(2436.713mil,939.823mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-4(2456.398mil,939.823mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-5(2456.89mil,960mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-6(2456.89mil,979.685mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-7(2456.398mil,999.862mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-8(2436.713mil,999.862mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-9(2417.028mil,999.862mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2236.614mil,979.685mil)(2396.85mil,979.685mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2326.732mil,960mil)(2396.85mil,960mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2349.862mil,939.823mil)(2397.343mil,939.823mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2397.343mil,999.862mil)(2397.343mil,1040mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2417.028mil,892.785mil)(2417.028mil,939.823mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2417.028mil,999.862mil)(2417.028mil,1050mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2436.713mil,912.47mil)(2436.713mil,939.823mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2436.713mil,999.862mil)(2436.713mil,1031.85mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2456.398mil,939.823mil)(2517.362mil,939.823mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2456.398mil,999.862mil)(2500.138mil,999.862mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2456.89mil,960mil)(2503.583mil,960mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2456.89mil,979.685mil)(2523.268mil,979.685mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Bottom Layer And Track (2520.509mil,869.409mil)(2834.409mil,869.409mil) on Bottom Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Bottom Layer And Track (2564.4mil,892.785mil)(2777.077mil,892.785mil) on Bottom Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Bottom Layer And Track (2777.077mil,892.785mil)(2834.409mil,950.118mil) on Bottom Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Top Layer And Pad IC3-1(2724.567mil,920.591mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Top Layer And Pad IC3-2(2724.567mil,895mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Top Layer And Pad IC3-3(2724.567mil,869.409mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Top Layer And Pad IC3-4(2795.433mil,869.409mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Top Layer And Pad IC3-5(2795.433mil,895mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Top Layer And Pad IC3-6(2795.433mil,920.591mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2976.378mil,920.944mil) (3013.622mil,1019.213mil) on Bottom Layer And Track (2896.575mil,925.63mil)(3080.315mil,925.63mil) on Bottom Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2976.378mil,920.944mil) (3013.622mil,1019.213mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2976.378mil,920.944mil) (3013.622mil,1019.213mil) on Top Layer And Track (3000mil,890mil)(3000mil,920.944mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2976.378mil,920.944mil) (3013.622mil,1019.213mil) on Top Layer And Track (3000mil,920.944mil)(3004.686mil,925.63mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (2976.378mil,920.944mil) (3013.622mil,1019.213mil) on Top Layer And Track (3004.686mil,925.63mil)(3034.37mil,925.63mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-1(3224.843mil,1025.118mil) on Top Layer 
+   Violation between Clearance Constraint: (3.619mil < 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-10(3245.118mil,1014.685mil) on Top Layer 
+   Violation between Clearance Constraint: (Collision < 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-2(3205.157mil,1025.118mil) on Top Layer 
+   Violation between Clearance Constraint: (3.619mil < 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-3(3184.882mil,1014.685mil) on Top Layer 
+   Violation between Clearance Constraint: (3.619mil < 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-4(3184.882mil,995mil) on Top Layer 
+   Violation between Clearance Constraint: (3.619mil < 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-5(3184.882mil,975.315mil) on Top Layer 
+   Violation between Clearance Constraint: (3.543mil < 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-6(3205.157mil,964.882mil) on Top Layer 
+   Violation between Clearance Constraint: (3.543mil < 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-7(3224.843mil,964.882mil) on Top Layer 
+   Violation between Clearance Constraint: (3.619mil < 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-8(3245.118mil,975.315mil) on Top Layer 
+   Violation between Clearance Constraint: (3.619mil < 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-9(3245.118mil,995mil) on Top Layer 
+   Violation between Clearance Constraint: (1.906mil < 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Track (3205.157mil,1025.118mil)(3205.157mil,1050.314mil) on Top Layer 
+   Violation between Clearance Constraint: (0.906mil < 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Track (3224.843mil,1025.118mil)(3224.843mil,1048.15mil) on Top Layer 
+   Violation between Clearance Constraint: (4.724mil < 5mil) Between Pad U4-1(3224.843mil,1025.118mil) on Top Layer And Pad U4-2(3205.157mil,1025.118mil) on Top Layer 
+   Violation between Clearance Constraint: (4.975mil < 5mil) Between Pad U4-1(3224.843mil,1025.118mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (4.975mil < 5mil) Between Pad U4-2(3205.157mil,1025.118mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (4.724mil < 5mil) Between Pad U4-6(3205.157mil,964.882mil) on Top Layer And Pad U4-7(3224.843mil,964.882mil) on Top Layer 
+   Violation between Clearance Constraint: (4.975mil < 5mil) Between Pad U4-6(3205.157mil,964.882mil) on Top Layer And Region (0 hole(s)) Top Layer 
+   Violation between Clearance Constraint: (4.975mil < 5mil) Between Pad U4-7(3224.843mil,964.882mil) on Top Layer And Region (0 hole(s)) Top Layer 
+Rule Violations :67
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=6mil) (Max=100mil) (Preferred=10mil) (All)
+Rule Violations :0
+
+Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 67
+Waived Violations : 0
+Time Elapsed        : 00:00:00

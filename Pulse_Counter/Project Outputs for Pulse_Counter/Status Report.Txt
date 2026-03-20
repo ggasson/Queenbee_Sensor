@@ -1,0 +1,10 @@
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [[No Variations]] of Project [Pulse_Counter.PrjPcb]
+   Generated File[//gmatrixsystems-my.sharepoint.com/personal/gary_g-matrixsystems_com/Documents/VMatrix/Pulse Counter/Pulse_Counter/Project Outputs for Pulse_Counter/BOM/Bill of Materials-Pulse_Counter.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 20:20:36 On 2026/02/18

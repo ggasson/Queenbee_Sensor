@@ -1,0 +1,513 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2026/02/18</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">20:18:17</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc" class="file"><acronym title="C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc">C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">67</td></tr>
+</table>
+</td>
+</table><a name="IDJGXQQ5FH4BBQCZDJERCGB0RFJB3XXHFVEPHRKINO0K1JOATZZD2K"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4Z3KME251CHOOSM3UXBLF2IN1Q13N1BMVAWHV3425H40IVV2IK">Clearance Constraint (Gap=5mil) (All),(All)</a></td>
+<td class="column2">67</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWFIXCV4NG2RAPR4LS0OSR0IJWBLIQQZZU5DXKZJOSVW3EMRRAAXM">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDN1HMWTOGIY3RGGRETSG1IF15YDFAKIE13PCOQTFOHJ2Q54EF1PRO">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDDIJWBDXRMU1SGPE2LVWSDFJW1JHKZQZETQSNG5JCGNLBM23QG1HE">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDK0YSBHE41RLNGT0EGL1BXB05RKZX2Z5KXY2ROCHIJ0Q0JVRSOITO">Width Constraint (Min=6mil) (Max=100mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDE42MRRH0W1SGM1ZVNNMU0YXDHHTVXHEXXPYHGFMH2GWBZT2JFTN">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTDAECO3SGFBBLYNROF0Y4IEX1M0NDWJDW3JU44BBDTRNWJ5NCOQO">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOKRRFXO512ZZIEVLM0S435OGOOLD0CIMUAUMRWFXDCVZKYO0FENM">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIB40FK1YKRWVPXN0BFX52TN5DJOESF20DZKTRCE5HGEN3A5ETPMH">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">67</td>
+</tr>
+</table><br><a name="ID4Z3KME251CHOOSM3UXBLF2IN1Q13N1BMVAWHV3425H40IVV2IK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=5mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3388.286mil|Location2.X=3392.619mil|Location1.Y=4635.038mil|Location2.Y=4639.371mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3388.286mil|Location2.X=3392.619mil|Location1.Y=4635.038mil|Location2.Y=4639.371mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-1(2397.343mil,939.823mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3388.286mil|Location2.X=3392.619mil|Location1.Y=4695.078mil|Location2.Y=4699.411mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3388.286mil|Location2.X=3392.619mil|Location1.Y=4695.078mil|Location2.Y=4699.411mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-10(2397.343mil,999.862mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3387.302mil|Location2.X=3391.635mil|Location1.Y=4674.408mil|Location2.Y=4678.741mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3387.302mil|Location2.X=3391.635mil|Location1.Y=4674.408mil|Location2.Y=4678.741mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-11(2396.85mil,979.685mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3387.302mil|Location2.X=3391.635mil|Location1.Y=4654.723mil|Location2.Y=4659.056mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3387.302mil|Location2.X=3391.635mil|Location1.Y=4654.723mil|Location2.Y=4659.056mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-12(2396.85mil,960mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3407.971mil|Location2.X=3412.305mil|Location1.Y=4635.038mil|Location2.Y=4639.371mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3407.971mil|Location2.X=3412.305mil|Location1.Y=4635.038mil|Location2.Y=4639.371mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-2(2417.028mil,939.823mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3427.656mil|Location2.X=3431.99mil|Location1.Y=4635.038mil|Location2.Y=4639.371mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3427.656mil|Location2.X=3431.99mil|Location1.Y=4635.038mil|Location2.Y=4639.371mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-3(2436.713mil,939.823mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3447.341mil|Location2.X=3451.675mil|Location1.Y=4635.038mil|Location2.Y=4639.371mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3447.341mil|Location2.X=3451.675mil|Location1.Y=4635.038mil|Location2.Y=4639.371mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-4(2456.398mil,939.823mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3447.341mil|Location2.X=3451.675mil|Location1.Y=4654.723mil|Location2.Y=4659.056mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3447.341mil|Location2.X=3451.675mil|Location1.Y=4654.723mil|Location2.Y=4659.056mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-5(2456.89mil,960mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3447.341mil|Location2.X=3451.675mil|Location1.Y=4674.408mil|Location2.Y=4678.741mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3447.341mil|Location2.X=3451.675mil|Location1.Y=4674.408mil|Location2.Y=4678.741mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-6(2456.89mil,979.685mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3447.341mil|Location2.X=3451.675mil|Location1.Y=4695.078mil|Location2.Y=4699.411mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3447.341mil|Location2.X=3451.675mil|Location1.Y=4695.078mil|Location2.Y=4699.411mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-7(2456.398mil,999.862mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3427.656mil|Location2.X=3431.99mil|Location1.Y=4695.078mil|Location2.Y=4699.411mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3427.656mil|Location2.X=3431.99mil|Location1.Y=4695.078mil|Location2.Y=4699.411mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-8(2436.713mil,999.862mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3407.971mil|Location2.X=3412.305mil|Location1.Y=4695.078mil|Location2.Y=4699.411mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3407.971mil|Location2.X=3412.305mil|Location1.Y=4695.078mil|Location2.Y=4699.411mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Pad U5-9(2417.028mil,999.862mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3467.026mil|Location2.X=3471.36mil|Location1.Y=4683.617mil|Location2.Y=4687.95mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3467.026mil|Location2.X=3471.36mil|Location1.Y=4683.617mil|Location2.Y=4687.95mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.381mil|Location2.X=3386.714mil|Location1.Y=4643.713mil|Location2.Y=4648.047mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.381mil|Location2.X=3386.714mil|Location1.Y=4643.713mil|Location2.Y=4648.047mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3409.611mil|Location2.X=3413.945mil|Location1.Y=4615.353mil|Location2.Y=4619.686mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3409.611mil|Location2.X=3413.945mil|Location1.Y=4615.353mil|Location2.Y=4619.686mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3467.026mil|Location2.X=3471.36mil|Location1.Y=4663.366mil|Location2.Y=4667.699mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3467.026mil|Location2.X=3471.36mil|Location1.Y=4663.366mil|Location2.Y=4667.699mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3391.056mil|Location2.X=3395.389mil|Location1.Y=4699.999mil|Location2.Y=4704.332mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3391.056mil|Location2.X=3395.389mil|Location1.Y=4699.999mil|Location2.Y=4704.332mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3467.026mil|Location2.X=3471.36mil|Location1.Y=4643.681mil|Location2.Y=4648.014mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3467.026mil|Location2.X=3471.36mil|Location1.Y=4643.681mil|Location2.Y=4648.014mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3430.426mil|Location2.X=3434.759mil|Location1.Y=4699.999mil|Location2.Y=4704.332mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3430.426mil|Location2.X=3434.759mil|Location1.Y=4699.999mil|Location2.Y=4704.332mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.381mil|Location2.X=3386.714mil|Location1.Y=4663.399mil|Location2.Y=4667.732mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.381mil|Location2.X=3386.714mil|Location1.Y=4663.399mil|Location2.Y=4667.732mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.381mil|Location2.X=3386.714mil|Location1.Y=4623.591mil|Location2.Y=4627.924mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.381mil|Location2.X=3386.714mil|Location1.Y=4623.591mil|Location2.Y=4627.924mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3467.026mil|Location2.X=3471.36mil|Location1.Y=4623.577mil|Location2.Y=4627.91mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3467.026mil|Location2.X=3471.36mil|Location1.Y=4623.577mil|Location2.Y=4627.91mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3410.741mil|Location2.X=3415.074mil|Location1.Y=4699.999mil|Location2.Y=4704.332mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3410.741mil|Location2.X=3415.074mil|Location1.Y=4699.999mil|Location2.Y=4704.332mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.381mil|Location2.X=3386.714mil|Location1.Y=4667.518mil|Location2.Y=4671.852mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.381mil|Location2.X=3386.714mil|Location1.Y=4667.518mil|Location2.Y=4671.852mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2236.614mil,979.685mil)(2396.85mil,979.685mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.381mil|Location2.X=3386.714mil|Location1.Y=4647.833mil|Location2.Y=4652.167mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.381mil|Location2.X=3386.714mil|Location1.Y=4647.833mil|Location2.Y=4652.167mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2326.732mil,960mil)(2396.85mil,960mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.381mil|Location2.X=3386.714mil|Location1.Y=4627.656mil|Location2.Y=4631.989mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3382.381mil|Location2.X=3386.714mil|Location1.Y=4627.656mil|Location2.Y=4631.989mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2349.862mil,939.823mil)(2397.343mil,939.823mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3395.176mil|Location2.X=3399.509mil|Location1.Y=4687.696mil|Location2.Y=4692.029mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3395.176mil|Location2.X=3399.509mil|Location1.Y=4687.696mil|Location2.Y=4692.029mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2397.343mil,999.862mil)(2397.343mil,1040mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3414.861mil|Location2.X=3419.194mil|Location1.Y=4615.353mil|Location2.Y=4619.686mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3414.861mil|Location2.X=3419.194mil|Location1.Y=4615.353mil|Location2.Y=4619.686mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2417.028mil,892.785mil)(2417.028mil,939.823mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3414.861mil|Location2.X=3419.194mil|Location1.Y=4687.696mil|Location2.Y=4692.029mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3414.861mil|Location2.X=3419.194mil|Location1.Y=4687.696mil|Location2.Y=4692.029mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2417.028mil,999.862mil)(2417.028mil,1050mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3434.546mil|Location2.X=3438.879mil|Location1.Y=4615.353mil|Location2.Y=4619.686mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3434.546mil|Location2.X=3438.879mil|Location1.Y=4615.353mil|Location2.Y=4619.686mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2436.713mil,912.47mil)(2436.713mil,939.823mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3434.546mil|Location2.X=3438.879mil|Location1.Y=4687.696mil|Location2.Y=4692.029mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3434.546mil|Location2.X=3438.879mil|Location1.Y=4687.696mil|Location2.Y=4692.029mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2436.713mil,999.862mil)(2436.713mil,1031.85mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3454.231mil|Location2.X=3458.564mil|Location1.Y=4627.656mil|Location2.Y=4631.989mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3454.231mil|Location2.X=3458.564mil|Location1.Y=4627.656mil|Location2.Y=4631.989mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2456.398mil,939.823mil)(2517.362mil,939.823mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3454.231mil|Location2.X=3458.564mil|Location1.Y=4687.696mil|Location2.Y=4692.029mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3454.231mil|Location2.X=3458.564mil|Location1.Y=4687.696mil|Location2.Y=4692.029mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2456.398mil,999.862mil)(2500.138mil,999.862mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3454.723mil|Location2.X=3459.056mil|Location1.Y=4647.833mil|Location2.Y=4652.167mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3454.723mil|Location2.X=3459.056mil|Location1.Y=4647.833mil|Location2.Y=4652.167mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2456.89mil,960mil)(2503.583mil,960mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3454.723mil|Location2.X=3459.056mil|Location1.Y=4667.518mil|Location2.Y=4671.852mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3454.723mil|Location2.X=3459.056mil|Location1.Y=4667.518mil|Location2.Y=4671.852mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2384.547mil,927.52mil) (2469.193mil,1012.165mil) on Top Layer And Track (2456.89mil,979.685mil)(2523.268mil,979.685mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3782.833mil|Location2.X=3787.167mil|Location1.Y=4557.243mil|Location2.Y=4561.576mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3782.833mil|Location2.X=3787.167mil|Location1.Y=4557.243mil|Location2.Y=4561.576mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Bottom Layer And Track (2520.509mil,869.409mil)(2834.409mil,869.409mil) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3732.833mil|Location2.X=3737.167mil|Location1.Y=4580.619mil|Location2.Y=4584.952mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3732.833mil|Location2.X=3737.167mil|Location1.Y=4580.619mil|Location2.Y=4584.952mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Bottom Layer And Track (2564.4mil,892.785mil)(2777.077mil,892.785mil) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3774.91mil|Location2.X=3779.243mil|Location1.Y=4580.619mil|Location2.Y=4584.952mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3774.91mil|Location2.X=3779.243mil|Location1.Y=4580.619mil|Location2.Y=4584.952mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Bottom Layer And Track (2777.077mil,892.785mil)(2834.409mil,950.118mil) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3735.196mil|Location2.X=3739.529mil|Location1.Y=4614.329mil|Location2.Y=4618.663mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3735.196mil|Location2.X=3739.529mil|Location1.Y=4614.329mil|Location2.Y=4618.663mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Top Layer And Pad IC3-1(2724.567mil,920.591mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3735.196mil|Location2.X=3739.529mil|Location1.Y=4588.739mil|Location2.Y=4593.072mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3735.196mil|Location2.X=3739.529mil|Location1.Y=4588.739mil|Location2.Y=4593.072mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Top Layer And Pad IC3-2(2724.567mil,895mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3735.196mil|Location2.X=3739.529mil|Location1.Y=4563.148mil|Location2.Y=4567.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3735.196mil|Location2.X=3739.529mil|Location1.Y=4563.148mil|Location2.Y=4567.481mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Top Layer And Pad IC3-3(2724.567mil,869.409mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3782.833mil|Location2.X=3787.167mil|Location1.Y=4563.148mil|Location2.Y=4567.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3782.833mil|Location2.X=3787.167mil|Location1.Y=4563.148mil|Location2.Y=4567.481mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Top Layer And Pad IC3-4(2795.433mil,869.409mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3782.833mil|Location2.X=3787.167mil|Location1.Y=4588.739mil|Location2.Y=4593.072mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3782.833mil|Location2.X=3787.167mil|Location1.Y=4588.739mil|Location2.Y=4593.072mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Top Layer And Pad IC3-5(2795.433mil,895mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3782.833mil|Location2.X=3787.167mil|Location1.Y=4614.329mil|Location2.Y=4618.663mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3782.833mil|Location2.X=3787.167mil|Location1.Y=4614.329mil|Location2.Y=4618.663mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2735mil,855.63mil) (2785mil,934.37mil) on Top Layer And Pad IC3-6(2795.433mil,920.591mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4011.456mil|Location2.X=4015.789mil|Location1.Y=4613.463mil|Location2.Y=4617.797mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4011.456mil|Location2.X=4015.789mil|Location1.Y=4613.463mil|Location2.Y=4617.797mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2976.378mil,920.944mil) (3013.622mil,1019.213mil) on Bottom Layer And Track (2896.575mil,925.63mil)(3080.315mil,925.63mil) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4011.456mil|Location2.X=4015.789mil|Location1.Y=4609.303mil|Location2.Y=4613.636mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4011.456mil|Location2.X=4015.789mil|Location1.Y=4609.303mil|Location2.Y=4613.636mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2976.378mil,920.944mil) (3013.622mil,1019.213mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3997.833mil|Location2.X=4002.167mil|Location1.Y=4608.777mil|Location2.Y=4613.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3997.833mil|Location2.X=4002.167mil|Location1.Y=4608.777mil|Location2.Y=4613.11mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2976.378mil,920.944mil) (3013.622mil,1019.213mil) on Top Layer And Track (3000mil,890mil)(3000mil,920.944mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3997.833mil|Location2.X=4002.167mil|Location1.Y=4608.777mil|Location2.Y=4613.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3997.833mil|Location2.X=4002.167mil|Location1.Y=4608.777mil|Location2.Y=4613.11mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2976.378mil,920.944mil) (3013.622mil,1019.213mil) on Top Layer And Track (3000mil,920.944mil)(3004.686mil,925.63mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4002.52mil|Location2.X=4006.853mil|Location1.Y=4613.463mil|Location2.Y=4617.797mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4002.52mil|Location2.X=4006.853mil|Location1.Y=4613.463mil|Location2.Y=4617.797mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (2976.378mil,920.944mil) (3013.622mil,1019.213mil) on Top Layer And Track (3004.686mil,925.63mil)(3034.37mil,925.63mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4215.816mil|Location2.X=4220.149mil|Location1.Y=4707.046mil|Location2.Y=4711.379mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4215.816mil|Location2.X=4220.149mil|Location1.Y=4707.046mil|Location2.Y=4711.379mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-1(3224.843mil,1025.118mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4232.703mil|Location2.X=4238.953mil|Location1.Y=4706.088mil|Location2.Y=4712.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4232.703mil|Location2.X=4238.953mil|Location1.Y=4706.088mil|Location2.Y=4712.338mil|Absolute=True">Clearance Constraint: (3.619mil &lt; 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-10(3245.118mil,1014.685mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4196.131mil|Location2.X=4200.464mil|Location1.Y=4707.046mil|Location2.Y=4711.379mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4196.131mil|Location2.X=4200.464mil|Location1.Y=4707.046mil|Location2.Y=4711.379mil|Absolute=True">Clearance Constraint: (Collision &lt; 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-2(3205.157mil,1025.118mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4191.047mil|Location2.X=4197.297mil|Location1.Y=4695.29mil|Location2.Y=4701.54mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4191.047mil|Location2.X=4197.297mil|Location1.Y=4695.29mil|Location2.Y=4701.54mil|Absolute=True">Clearance Constraint: (3.619mil &lt; 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-3(3184.882mil,1014.685mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4191.047mil|Location2.X=4197.297mil|Location1.Y=4688.145mil|Location2.Y=4694.395mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4191.047mil|Location2.X=4197.297mil|Location1.Y=4688.145mil|Location2.Y=4694.395mil|Absolute=True">Clearance Constraint: (3.619mil &lt; 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-4(3184.882mil,995mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4191.047mil|Location2.X=4197.297mil|Location1.Y=4668.46mil|Location2.Y=4674.71mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4191.047mil|Location2.X=4197.297mil|Location1.Y=4668.46mil|Location2.Y=4674.71mil|Absolute=True">Clearance Constraint: (3.619mil &lt; 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-5(3184.882mil,975.315mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4208.893mil|Location2.X=4215.143mil|Location1.Y=4660.418mil|Location2.Y=4666.668mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4208.893mil|Location2.X=4215.143mil|Location1.Y=4660.418mil|Location2.Y=4666.668mil|Absolute=True">Clearance Constraint: (3.543mil &lt; 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-6(3205.157mil,964.882mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4228.578mil|Location2.X=4234.828mil|Location1.Y=4660.418mil|Location2.Y=4666.668mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4228.578mil|Location2.X=4234.828mil|Location1.Y=4660.418mil|Location2.Y=4666.668mil|Absolute=True">Clearance Constraint: (3.543mil &lt; 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-7(3224.843mil,964.882mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4232.703mil|Location2.X=4238.953mil|Location1.Y=4668.46mil|Location2.Y=4674.71mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4232.703mil|Location2.X=4238.953mil|Location1.Y=4668.46mil|Location2.Y=4674.71mil|Absolute=True">Clearance Constraint: (3.619mil &lt; 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-8(3245.118mil,975.315mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4232.703mil|Location2.X=4238.953mil|Location1.Y=4688.145mil|Location2.Y=4694.395mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4232.703mil|Location2.X=4238.953mil|Location1.Y=4688.145mil|Location2.Y=4694.395mil|Absolute=True">Clearance Constraint: (3.619mil &lt; 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Pad U4-9(3245.118mil,995mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4202.033mil|Location2.X=4208.283mil|Location1.Y=4707.04mil|Location2.Y=4713.29mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4202.033mil|Location2.X=4208.283mil|Location1.Y=4707.04mil|Location2.Y=4713.29mil|Absolute=True">Clearance Constraint: (1.906mil &lt; 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Track (3205.157mil,1025.118mil)(3205.157mil,1050.314mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4221.717mil|Location2.X=4227.967mil|Location1.Y=4706.54mil|Location2.Y=4712.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4221.717mil|Location2.X=4227.967mil|Location1.Y=4706.54mil|Location2.Y=4712.79mil|Absolute=True">Clearance Constraint: (0.906mil &lt; 5mil) Between Area Fill (3195.981mil,975.315mil) (3234.019mil,1019.213mil) on Top Layer And Track (3224.843mil,1025.118mil)(3224.843mil,1048.15mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4211.875mil|Location2.X=4218.125mil|Location1.Y=4718.263mil|Location2.Y=4724.513mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4211.875mil|Location2.X=4218.125mil|Location1.Y=4718.263mil|Location2.Y=4724.513mil|Absolute=True">Clearance Constraint: (4.724mil &lt; 5mil) Between Pad U4-1(3224.843mil,1025.118mil) on Top Layer And Pad U4-2(3205.157mil,1025.118mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4211.757mil|Location2.X=4218.007mil|Location1.Y=4718.475mil|Location2.Y=4724.725mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4211.757mil|Location2.X=4218.007mil|Location1.Y=4718.475mil|Location2.Y=4724.725mil|Absolute=True">Clearance Constraint: (4.975mil &lt; 5mil) Between Pad U4-1(3224.843mil,1025.118mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4211.993mil|Location2.X=4218.243mil|Location1.Y=4718.475mil|Location2.Y=4724.725mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4211.993mil|Location2.X=4218.243mil|Location1.Y=4718.475mil|Location2.Y=4724.725mil|Absolute=True">Clearance Constraint: (4.975mil &lt; 5mil) Between Pad U4-2(3205.157mil,1025.118mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4211.875mil|Location2.X=4218.125mil|Location1.Y=4658.027mil|Location2.Y=4664.277mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4211.875mil|Location2.X=4218.125mil|Location1.Y=4658.027mil|Location2.Y=4664.277mil|Absolute=True">Clearance Constraint: (4.724mil &lt; 5mil) Between Pad U4-6(3205.157mil,964.882mil) on Top Layer And Pad U4-7(3224.843mil,964.882mil) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4211.993mil|Location2.X=4218.243mil|Location1.Y=4645.275mil|Location2.Y=4651.525mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4211.993mil|Location2.X=4218.243mil|Location1.Y=4645.275mil|Location2.Y=4651.525mil|Absolute=True">Clearance Constraint: (4.975mil &lt; 5mil) Between Pad U4-6(3205.157mil,964.882mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4211.757mil|Location2.X=4218.007mil|Location1.Y=4645.275mil|Location2.Y=4651.525mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\OneDrive\OneDrive - G-Matrix Systems\VMatrix\Pulse Counter\Pulse_Counter\PulseV1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4211.757mil|Location2.X=4218.007mil|Location1.Y=4645.275mil|Location2.Y=4651.525mil|Absolute=True">Clearance Constraint: (4.975mil &lt; 5mil) Between Pad U4-7(3224.843mil,964.882mil) on Top Layer And Region (0 hole(s)) Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

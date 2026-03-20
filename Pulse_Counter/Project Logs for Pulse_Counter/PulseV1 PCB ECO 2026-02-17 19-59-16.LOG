@@ -1,0 +1,17 @@
+Change Component Comment : Designator=R7 Old Comment=1M5 5% 0603(1608) New Comment=CL0603JN1M5P
+Change Component Comment : Designator=R4 Old Comment=100K 1% 0603(1608) New Comment=FRC0603J104 TS
+Change Component Comment : Designator=R21 Old Comment=100K 1% 0603(1608) New Comment=FRC0603J104 TS
+Change Component Comment : Designator=C6 Old Comment=CC0603FRNPO9BN750 New Comment=0603C0G750J500NT
+Change Component Comment : Designator=R3 Old Comment=CPF0603F105KC1 New Comment=SCR0603F105K
+Change Component Comment : Designator=R12 Old Comment=ESR03EZPJ302 New Comment=FRC0603J302 TS
+Change Component Comment : Designator=D4 Old Comment=LSM0603453V New Comment=GL0603UR01
+Change Component Comment : Designator=D5 Old Comment=LSM0603453V New Comment=GL0603UR01
+Change Component Comment : Designator=D6 Old Comment=LSM0603453V New Comment=GL0603UR01
+Change Component Comment : Designator=D7 Old Comment=LSM0603453V New Comment=GL0603UR01
+Change Component Comment : Designator=R13 Old Comment=MCT0603MC4701FPW00 New Comment=FRC0603J472 TS
+Change Component Comment : Designator=R14 Old Comment=MCT0603MC4701FPW00 New Comment=FRC0603J472 TS
+Change Component Comment : Designator=R16 Old Comment=TFCR0603-10W-E-1001FT-1K New Comment=FRC0603J102 TS
+Change Component Comment : Designator=R17 Old Comment=TFCR0603-10W-E-1001FT-1K New Comment=FRC0603J102 TS
+Change Component Comment : Designator=R18 Old Comment=TFCR0603-10W-E-1001FT-1K New Comment=FRC0603J102 TS
+Change Component Comment : Designator=R19 Old Comment=TFCR0603-10W-E-1001FT-1K New Comment=FRC0603J102 TS
+Added Pin To Net: NetName=+3.3V Pin=U5-3
